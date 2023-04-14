@@ -26,13 +26,12 @@ export class AppComponent implements OnInit {
   ngOnInit(): void {
     this.primengConfig.ripple = true;
     this.menuItems = [
-      { label: 'Home', icon: 'pi pi-home', routerLink: '/' },
+      { label: 'Κατάλογος Dataset - Τουρισμός', icon: 'pi pi-home', routerLink: '/' },
       {
-        label: 'Products',
+        label: 'Τουρισμός',
         icon: 'pi pi-shopping-cart',
         items: [
-          { label: 'Laptops', icon: 'pi pi-desktop', routerLink: '/products/laptops' },
-          { label: 'Smartphones', icon: 'pi pi-mobile', routerLink: '/products/smartphones' }
+          { label: 'Δαπάνη', icon: 'pi pi-desktop', routerLink: '/charts/tourism' }
         ]
       },
       { label: 'About Us', icon: 'pi pi-info-circle', routerLink: '/about-us' }

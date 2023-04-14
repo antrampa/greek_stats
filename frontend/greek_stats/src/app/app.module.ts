@@ -15,6 +15,9 @@ import { DropdownModule } from 'primeng/dropdown';
 import { ChartModule } from 'primeng/chart';
 
 import { SidebarModule } from 'primeng/sidebar';
+import { ChartTourismComponent } from './chart-tourism/chart-tourism.component';
+import { TableTourismComponent } from './table-tourism/table-tourism.component';
+import { TourismComponent } from './tourism/tourism.component';
 // import { MainMenuComponent } from './main-menu/main-menu.component';
 // import { SideBarComponent } from './side-bar/side-bar.component';
 // import { ChartComponent } from './chart/chart.component';
@@ -22,6 +25,9 @@ import { SidebarModule } from 'primeng/sidebar';
 @NgModule({
   declarations: [
     AppComponent,
+    ChartTourismComponent,
+    TableTourismComponent,
+    TourismComponent,
     // MainMenuComponent,
     // SideBarComponent,
     // ChartComponent
@@ -38,6 +44,6 @@ import { SidebarModule } from 'primeng/sidebar';
     SidebarModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent] 
 })
 export class AppModule { }
