@@ -9,12 +9,22 @@ import { AppComponent } from './app.component';
 
 import {AccordionModule} from 'primeng/accordion';     //accordion and accordion tab
 import {MenuItem} from 'primeng/api';  
+import { MenubarModule } from 'primeng/menubar';
 
 import { DropdownModule } from 'primeng/dropdown';
+import { ChartModule } from 'primeng/chart';
+
+import { SidebarModule } from 'primeng/sidebar';
+// import { MainMenuComponent } from './main-menu/main-menu.component';
+// import { SideBarComponent } from './side-bar/side-bar.component';
+// import { ChartComponent } from './chart/chart.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    // MainMenuComponent,
+    // SideBarComponent,
+    // ChartComponent
   ],
   imports: [
     BrowserModule,
@@ -22,7 +32,10 @@ import { DropdownModule } from 'primeng/dropdown';
     AccordionModule,
     BrowserAnimationsModule,
     DropdownModule,
-    FormsModule
+    FormsModule,
+    ChartModule,
+    MenubarModule,
+    SidebarModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,0 +1,10 @@
+<p-sidebar [(visible)]="visible" [fullScreen]="true">
+    <h2>Menu</h2>
+    <ul>
+      <li><a routerLink="/">Home</a></li>
+      <li><a routerLink="/about">About</a></li>
+      <li><a routerLink="/contact">Contact</a></li>
+    </ul>
+  </p-sidebar>
+  <button pButton type="button" (click)="visible = !visible" icon="pi pi-bars" class="p-button-rounded p-button-text"></button>
+  
