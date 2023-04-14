@@ -13,6 +13,7 @@ import { MenubarModule } from 'primeng/menubar';
 
 import { DropdownModule } from 'primeng/dropdown';
 import { ChartModule } from 'primeng/chart';
+import { TableModule } from 'primeng/table';
 
 import { SidebarModule } from 'primeng/sidebar';
 import { ChartTourismComponent } from './chart-tourism/chart-tourism.component';
@@ -41,7 +42,8 @@ import { TourismComponent } from './tourism/tourism.component';
     FormsModule,
     ChartModule,
     MenubarModule,
-    SidebarModule
+    SidebarModule,
+    TableModule
   ],
   providers: [],
   bootstrap: [AppComponent] 

@@ -9,22 +9,7 @@
 </div>
 
 <div class="main-content">
-  <h2>Small Form</h2>
-  <form>
-    <label for="name">Name:</label>
-    <input type="text" id="name" name="name"><br><br>
-    <label for="email">Email:</label>
-    <input type="email" id="email" name="email"><br><br>
-    <label for="message">Message:</label>
-    <textarea id="message" name="message"></textarea><br><br>
-    <button type="submit">Submit</button>
-  </form>
-  <br>
-Prime NG Test <br>
-
-
-<div class="card flex justify-content-center">
-  <p-dropdown [options]="cities" [(ngModel)]="selectedCity" optionLabel="name"></p-dropdown>
-</div>
+  
+  <app-table-tourism></app-table-tourism>
 </div>
 <router-outlet></router-outlet>
