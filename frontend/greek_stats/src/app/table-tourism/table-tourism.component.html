@@ -1,8 +1,9 @@
-<h2>Τουρισμός</h2>
-<p>Δαπάνη ανά ταξίδι μη κατοίκων στην Ελλάδα κατά χώρα προέλευσης (Τριμηνιαία)</p>
 
 <div class="card">
-    <p-table [columns]="cols" [value]="results" styleClass="p-datatable-gridlines" [tableStyle]="{ 'min-width': '50rem' }">
+    <p-table [columns]="cols" [value]="results" 
+    styleClass="p-datatable-gridlines" 
+    [tableStyle]="{ 'min-width': '50rem' }"
+    selectionMode="single" [(selection)]="selectedResult" >
         <ng-template pTemplate="header" let-columns>
             <tr>
                 <th *ngFor="let col of columns" pSortableColumn="{{ col.field }}">
@@ -11,7 +12,7 @@
             </tr>
         </ng-template>
         <ng-template pTemplate="body" let-rowData let-columns="columns">
-            <tr>
+            <tr [pSelectableRow]="rowData">
                 <td *ngFor="let col of columns">
                     {{ rowData[col.field] }}
                 </td>

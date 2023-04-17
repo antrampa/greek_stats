@@ -11,6 +11,7 @@ export class TableTourismComponent implements OnInit {
   products: any[];
   rowData: any[];
   results: any[];
+  selectedResult: any;
   cols: any[];
 
   constructor(private tourismService: TourismService){}

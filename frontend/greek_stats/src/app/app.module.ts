@@ -14,6 +14,7 @@ import { MenubarModule } from 'primeng/menubar';
 import { DropdownModule } from 'primeng/dropdown';
 import { ChartModule } from 'primeng/chart';
 import { TableModule } from 'primeng/table';
+import { TabViewModule } from 'primeng/tabview';
 
 import { SidebarModule } from 'primeng/sidebar';
 import { ChartTourismComponent } from './chart-tourism/chart-tourism.component';
@@ -47,6 +48,7 @@ import { HttpClientModule } from '@angular/common/http';
     MenubarModule,
     SidebarModule,
     TableModule,
+    TabViewModule,
     HttpClientModule
   ],
   providers: [],
