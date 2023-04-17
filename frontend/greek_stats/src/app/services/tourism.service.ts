@@ -8,18 +8,19 @@ export class TourismService {
 
   constructor(private http: HttpClient) { }
 
-  getDatapaniCsv() {
-    this.http.get('path/to/file.csv', {responseType: 'text'}).subscribe(
-      data => {
-        /* parse data */
-        const csvData = this.parseCSVData(data);
-        console.log(csvData);
-        return csvData;
-      },
-      error => {
-        console.log(error);
-      }
-    );
+  getDatapaniCsv() : any {
+    return this.http.get('assets/csv/BoG_Non_residents_expenditure_per_journey_el_2023-03-31.csv', {responseType: 'text'});
+    // this.http.get('assets/csv/BoG_Non_residents_expenditure_per_journey_el_2023-03-31.csv', {responseType: 'text'}).subscribe(
+    //   data => {
+    //     /* parse data */
+    //     const csvData = this.parseCSVData(data);
+    //     //console.log(csvData);
+    //     return csvData;
+    //   },
+    //   error => {
+    //     console.log(error);
+    //   }
+    // );
   }
 
   private parseCSVData(csvData: string) {

@@ -2,22 +2,21 @@
 <p>Δαπάνη ανά ταξίδι μη κατοίκων στην Ελλάδα κατά χώρα προέλευσης (Τριμηνιαία)</p>
 
 <div class="card">
-    <p-table [value]="products" [tableStyle]="{ 'min-width': '50rem' }">
-        <ng-template pTemplate="header">
+    <p-table [columns]="cols" [value]="results" styleClass="p-datatable-gridlines" [tableStyle]="{ 'min-width': '50rem' }">
+        <ng-template pTemplate="header" let-columns>
             <tr>
-                <th>Code</th>
-                <th>Name</th>
-                <th>Category</th>
-                <th>Quantity</th>
+                <th *ngFor="let col of columns" pSortableColumn="{{ col.field }}">
+                    {{ col.header }} <p-sortIcon field="{{ col.field }}"></p-sortIcon>
+                </th>
             </tr>
         </ng-template>
-        <ng-template pTemplate="body" let-product>
+        <ng-template pTemplate="body" let-rowData let-columns="columns">
             <tr>
-                <td>{{ product.code }}</td>
-                <td>{{ product.name }}</td>
-                <td>{{ product.category }}</td>
-                <td>{{ product.quantity }}</td>
+                <td *ngFor="let col of columns">
+                    {{ rowData[col.field] }}
+                </td>
             </tr>
         </ng-template>
     </p-table>
+    
 </div>

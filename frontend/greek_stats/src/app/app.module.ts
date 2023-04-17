@@ -23,6 +23,9 @@ import { TourismComponent } from './tourism/tourism.component';
 // import { SideBarComponent } from './side-bar/side-bar.component';
 // import { ChartComponent } from './chart/chart.component';
 
+import { HttpClientModule } from '@angular/common/http';
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -43,7 +46,8 @@ import { TourismComponent } from './tourism/tourism.component';
     ChartModule,
     MenubarModule,
     SidebarModule,
-    TableModule
+    TableModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent] 
