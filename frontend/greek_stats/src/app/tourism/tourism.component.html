@@ -6,7 +6,7 @@
     <p-tabView>
         <p-tabPanel header="Πίνακας">
             <p>
-                <app-table-tourism></app-table-tourism>
+                <app-table-tourism [rowData]="rowData" [results]="results" [cols]="cols"></app-table-tourism>
             </p>
         </p-tabPanel>
         <p-tabPanel header="Διαγράμματα">
