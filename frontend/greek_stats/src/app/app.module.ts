@@ -27,6 +27,8 @@ import { TourismComponent } from './tourism/tourism.component';
 import { HttpClientModule } from '@angular/common/http';
 import { MapTourismComponent } from './map-tourism/map-tourism.component';
 import { PieChartComponent } from './chart-tourism/pie-chart/pie-chart.component';
+import { AboutUsComponent } from './about-us/about-us.component';
+import { HomeComponent } from './home/home.component';
 
 
 @NgModule({
@@ -37,6 +39,8 @@ import { PieChartComponent } from './chart-tourism/pie-chart/pie-chart.component
     TourismComponent,
     MapTourismComponent,
     PieChartComponent,
+    AboutUsComponent,
+    HomeComponent,
     // MainMenuComponent,
     // SideBarComponent,
     // ChartComponent
