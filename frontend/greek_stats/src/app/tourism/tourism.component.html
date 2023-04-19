@@ -11,7 +11,12 @@
         </p-tabPanel>
         <p-tabPanel header="Διαγράμματα">
             <p>
-                <app-chart-tourism></app-chart-tourism>
+                <app-chart-tourism 
+                    [title]="'Δαπάνη ανά ταξίδι μη κατοίκων στην Ελλάδα κατά χώρα προέλευσης (Τριμηνιαία)'"
+                    [label]="'Δαπάνη'"
+                    [dataLabel]="chartDataLabel"
+                    [data]="chartData"
+                ></app-chart-tourism>
             </p>
         </p-tabPanel>
         <p-tabPanel header="Χάρτες">

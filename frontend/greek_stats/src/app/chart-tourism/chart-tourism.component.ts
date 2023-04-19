@@ -9,7 +9,8 @@ export class ChartTourismComponent  implements OnInit {
     basicData: any;
 
     basicOptions: any;
-    @Input() label: String = 'Δαπάνη';
+    @Input() title: string = 'Test';
+    @Input() label: string = 'Δαπάνη';
     @Input() dataLabel: any[] = ['Q1', 'Q2', 'Q3', 'Q4'];
     @Input() data: any[] = [540, 325, 702, 620];
 
