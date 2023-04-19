@@ -29,12 +29,17 @@ export class AppComponent implements OnInit {
       { label: 'Κατάλογος Dataset - Τουρισμός', icon: 'pi pi-home', routerLink: '/' },
       {
         label: 'Τουρισμός',
-        icon: 'pi pi-shopping-cart',
+        icon: 'pi pi-globe',
         items: [
-          { label: 'Δαπάνη', icon: 'pi pi-desktop', routerLink: '/charts/tourism' }
+          { label: 'Δαπάνη ανά ταξίδι μη κατοίκων στην Ελλάδα κατά χώρα προέλευσης (Τριμηνιαία)', icon: 'pi pi-map', routerLink: '/charts/tourism/1' },
+          { label: 'Δαπάνη ανά ταξίδι κατοίκων στο εξωτερικό κατά χώρα προορισμού (Ετήσια)', icon: 'pi pi-map', routerLink: '/charts/tourism/2' },
+          { label: 'Δαπάνη ανά διανυκτέρευση μη κατοίκων στην Ελλάδα κατά χώρα προέλευσης (Ετήσια)', icon: 'pi pi-map', routerLink: '/charts/tourism/2' },
+          { label: 'Δαπάνη ανά διανυκτέρευση κατοίκων στο εξωτερικό κατά χώρα προορισμού (Ετήσια)', icon: 'pi pi-map', routerLink: '/charts/tourism/2' },
+          { label: 'Μέση διάρκεια παραμονής ανά ταξίδι κατοίκων στο εξωτερικό κατά χώρα προορισμού (Ετήσια)', icon: 'pi pi-map', routerLink: '/charts/tourism/2' },
+          { label: 'Μέση διάρκεια παραμονής ανά ταξίδι μη κατοίκων στην Ελλάδα κατά χώρα προέλευσης (Ετήσια)', icon: 'pi pi-map', routerLink: '/charts/tourism/2' },
+
         ]
-      },
-      { label: 'About Us', icon: 'pi pi-info-circle', routerLink: '/about-us' }
+      }
     ];
     this.cities = [
       { name: 'New York', code: 'NY' },
