@@ -25,6 +25,7 @@ import { TourismComponent } from './tourism/tourism.component';
 // import { ChartComponent } from './chart/chart.component';
 
 import { HttpClientModule } from '@angular/common/http';
+import { MapTourismComponent } from './map-tourism/map-tourism.component';
 
 
 @NgModule({
@@ -33,6 +34,7 @@ import { HttpClientModule } from '@angular/common/http';
     ChartTourismComponent,
     TableTourismComponent,
     TourismComponent,
+    MapTourismComponent,
     // MainMenuComponent,
     // SideBarComponent,
     // ChartComponent
