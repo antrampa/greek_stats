@@ -1,6 +1,6 @@
 
 <h2>Τουρισμός</h2>
-<p>Δαπάνη ανά ταξίδι μη κατοίκων στην Ελλάδα κατά χώρα προέλευσης (Τριμηνιαία)</p>
+<p>{{title}}</p>
 
 <div class="card">
     <p-tabView>
@@ -12,8 +12,8 @@
         <p-tabPanel header="Διαγράμματα">
             <p>
                 <app-chart-tourism 
-                    [title]="'Δαπάνη ανά ταξίδι μη κατοίκων στην Ελλάδα κατά χώρα προέλευσης (Τριμηνιαία)'"
-                    [label]="'Δαπάνη'"
+                    [title]="title"
+                    [label]="label"
                     [dataLabel]="chartDataLabel"
                     [data]="chartData"
                 ></app-chart-tourism>

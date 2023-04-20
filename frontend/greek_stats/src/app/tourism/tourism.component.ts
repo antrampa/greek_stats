@@ -16,40 +16,16 @@ export class TourismComponent implements OnInit {
 
     chartDataLabel: any[] = [];//['Q1', 'Q2', 'Q3', 'Q4'];
     chartData: number[] = [];
-  //   chartData: number[] =  [
-  //     695.8,
-  //     776.7,
-  //     674,
-  //     551.3,
-  //     593.1,
-  //     745,
-  //     563.8,
-  //     515.3,
-  //     581.1,
-  //     1218.2,
-  //     523.9,
-  //     685.9,
-  //     846.3,
-  //     670,
-  //     580.9,
-  //     515.1,
-  //     225.9,
-  //     900.8,
-  //     669.2,
-  //     565.1,
-  //     1002.6,
-  //     785.6,
-  //     1123,
-  //     0,
-  //     577.8,
-  //     1025.8,
-  //     730.2
-  // ];//[776.7, 325, 702, 620];
+
+    title : string = "";
+    label : string = "";
+
     
     constructor(private route: ActivatedRoute,private tourismService: TourismService){}
     ngOnInit() {
       const id = +this.route.snapshot.paramMap.get('id');
       console.log("id", id);
+      this.title = this.getTitle(id);
       this.cols = [];
         this.tourismService.getDatapaniCsv(id).subscribe(
           data => {
@@ -113,5 +89,47 @@ export class TourismComponent implements OnInit {
       for (let j = 0; j < totalPerCol.length; j++) {
         this.chartData.push(totalPerCol[j]);
       }
+    }
+
+    private getTitle(id: number) : string {
+      switch(id) {
+
+        case 1:
+          return "Δαπάνη ανά ταξίδι μη κατοίκων στην Ελλάδα κατά χώρα προέλευσης (Τριμηνιαία)";
+        case 2:
+          return "Δαπάνη ανά ταξίδι κατοίκων στο εξωτερικό κατά χώρα προορισμού (Ετήσια)";
+        case 3:
+          return "Δαπάνη ανά διανυκτέρευση μη κατοίκων στην Ελλάδα κατά χώρα προέλευσης (Ετήσια)";
+        case 4:
+          return "Δαπάνη ανά διανυκτέρευση κατοίκων στο εξωτερικό κατά χώρα προορισμού (Ετήσια)";  
+        case 5:
+            return "Μέση διάρκεια παραμονής ανά ταξίδι κατοίκων στο εξωτερικό κατά χώρα προορισμού (Ετήσια)";
+        case 6:
+          return "Μέση διάρκεια παραμονής ανά ταξίδι μη κατοίκων στην Ελλάδα κατά χώρα προέλευσης (Ετήσια)";  
+        default:
+          return "";
+          break;
+      }
+      /**
+       * <li><a [routerLink]="['/tourism', 1]" routerLinkActive="active" ariaCurrentWhenActive="page">
+            
+        </a></li>
+        <li><a [routerLink]="['/tourism', 2]" routerLinkActive="active" ariaCurrentWhenActive="page">
+            
+        </a></li>
+        <li><a [routerLink]="['/tourism', 3]" routerLinkActive="active" ariaCurrentWhenActive="page">
+            
+        </a></li>
+        <li><a [routerLink]="['/tourism', 4]" routerLinkActive="active" ariaCurrentWhenActive="page">
+            
+        </a></li>
+        <li><a [routerLink]="['/tourism', 5]" routerLinkActive="active" ariaCurrentWhenActive="page">
+            
+        </a></li>
+        <li><a [routerLink]="['/tourism', 6]" routerLinkActive="active" ariaCurrentWhenActive="page">
+            
+        </a></li>
+       */
+      return "";
     }
 }
