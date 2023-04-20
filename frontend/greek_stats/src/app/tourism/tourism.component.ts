@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { TourismService } from '../services/tourism.service';
 
 @Component({
@@ -45,10 +46,12 @@ export class TourismComponent implements OnInit {
   //     730.2
   // ];//[776.7, 325, 702, 620];
     
-    constructor(private tourismService: TourismService){}
+    constructor(private route: ActivatedRoute,private tourismService: TourismService){}
     ngOnInit() {
+      const id = +this.route.snapshot.paramMap.get('id');
+      console.log("id", id);
       this.cols = [];
-        this.tourismService.getDatapaniCsv().subscribe(
+        this.tourismService.getDatapaniCsv(id).subscribe(
           data => {
             /* parse data */
             // console.log(data);

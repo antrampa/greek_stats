@@ -29,6 +29,7 @@ import { MapTourismComponent } from './map-tourism/map-tourism.component';
 import { PieChartComponent } from './chart-tourism/pie-chart/pie-chart.component';
 import { AboutUsComponent } from './about-us/about-us.component';
 import { HomeComponent } from './home/home.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 
 @NgModule({
@@ -41,6 +42,7 @@ import { HomeComponent } from './home/home.component';
     PieChartComponent,
     AboutUsComponent,
     HomeComponent,
+    PageNotFoundComponent,
     // MainMenuComponent,
     // SideBarComponent,
     // ChartComponent

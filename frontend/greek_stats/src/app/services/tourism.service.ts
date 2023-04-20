@@ -8,8 +8,8 @@ export class TourismService {
 
   constructor(private http: HttpClient) { }
 
-  getDatapaniCsv() : any {
-    return this.http.get('assets/csv/BoG_Non_residents_expenditure_per_journey_el_2023-03-31.csv', {responseType: 'text'});
+  getDatapaniCsv(id: number) : any {
+    return this.http.get('assets/csv/' + id + '.csv', {responseType: 'text'});
   }
 
   private parseCSVData(csvData: string) {
