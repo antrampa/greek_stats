@@ -32,6 +32,7 @@ import { HomeComponent } from './home/home.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { TourismPerRegionComponent } from './tourism-per-region/tourism-per-region.component';
 import { SalesPerCountryComponent } from './sales-per-country/sales-per-country.component';
+import { HorizontalBarComponent } from './chart-tourism/horizontal-bar/horizontal-bar.component';
 
 
 @NgModule({
@@ -47,6 +48,7 @@ import { SalesPerCountryComponent } from './sales-per-country/sales-per-country.
     PageNotFoundComponent,
     TourismPerRegionComponent,
     SalesPerCountryComponent,
+    HorizontalBarComponent,
     // MainMenuComponent,
     // SideBarComponent,
     // ChartComponent

@@ -42,7 +42,7 @@ export class TourismPerRegionComponent implements OnInit {
             this.csvData = data;
             this.parseCSVData(data);
             this.parseRegions(data);
-            // this.parseCSVDataForCharts(data);
+            //this.parseCSVDataForCharts(data);
           },
           error => {
             console.log(error);
@@ -101,6 +101,7 @@ export class TourismPerRegionComponent implements OnInit {
       console.log("selectedRegion",this.selectedRegion);
       console.log("this.csvData",this.csvData);
       this.parseCSVData(this.csvData);
+      //this.parseCSVDataForCharts(this.csvData);
   }
 
     private parseCSVDataForCharts(csvData: string) {
