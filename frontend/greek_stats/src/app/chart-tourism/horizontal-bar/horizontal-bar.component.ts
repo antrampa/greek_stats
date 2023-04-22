@@ -11,6 +11,7 @@ export class HorizontalBarComponent implements OnInit {
     @Input() label: string = 'Δαπάνη';
     @Input() dataLabel: any[] = ['Q1', 'Q2', 'Q3', 'Q4'];
     @Input() data: any[] = [540, 325, 702, 620];
+    @Input() data2: any[] = [];//[540, 325, 702, 620];
     labels: any[] = ['January', 'February', 'March', 'April', 'May', 'June', 'July'];
 
     constructor(){}
@@ -26,19 +27,19 @@ export class HorizontalBarComponent implements OnInit {
         const surfaceBorder = documentStyle.getPropertyValue('--surface-border');
 
         this.dataObj = {
-            labels: this.labels,
+            labels: this.dataLabel, //this.labels,
             datasets: [
                 {
                     label: 'My First dataset',
                     backgroundColor: documentStyle.getPropertyValue('--blue-500'),
                     borderColor: documentStyle.getPropertyValue('--blue-500'),
-                    data: [65, 59, 80, 81, 56, 55, 40]
+                    data: this.data // [65, 59, 80, 81, 56, 55, 40]
                 },
                 {
                     label: 'My Second dataset',
                     backgroundColor: documentStyle.getPropertyValue('--pink-500'),
                     borderColor: documentStyle.getPropertyValue('--pink-500'),
-                    data: [28, 48, 40, 19, 86, 27, 90]
+                    data: this.data2 //[28, 48, 40, 19, 86, 27, 90]
                 }
             ]
         };
