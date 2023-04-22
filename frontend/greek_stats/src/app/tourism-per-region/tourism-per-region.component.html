@@ -1,0 +1,47 @@
+<h2>Ταξιδιωτικά στοιχεία ανά περιφέρεια για τις κυριότερες χώρες προέλευσης ταξιδιωτών</h2>
+<p>{{title}}</p>
+<p>Περιφέρεια:
+    <p-dropdown [options]="regions" 
+    placeholder="Επιλέξτε περιφέρεια" 
+    [(ngModel)]="selectedRegion" 
+    (onChange)="onRegionSelect($event)" ></p-dropdown>
+</p>
+
+<div class="card">
+    <p-tabView>
+        <p-tabPanel header="Πίνακας">
+            
+
+            <p>
+                <app-table-tourism [rowData]="rowData" [results]="results" [cols]="cols"></app-table-tourism>
+            </p>
+        </p-tabPanel>
+        <p-tabPanel header="Διαγράμματα">
+            <p>
+                <!-- <app-chart-tourism 
+                    [title]="title"
+                    [label]="label"
+                    [dataLabel]="chartDataLabel"
+                    [data]="chartData"
+                ></app-chart-tourism> -->
+                
+            </p>
+        </p-tabPanel>
+        <p-tabPanel header="Διάγραμμα σε πίτα">
+            <p>
+                
+            </p>
+        </p-tabPanel>
+        <p-tabPanel header="Μισθός ανά χώρα">
+            <p>
+                
+            </p>
+        </p-tabPanel>
+        <p-tabPanel header="Πρόβλεψη">
+            <p>
+                
+            </p>
+        </p-tabPanel>
+        
+    </p-tabView>
+</div>

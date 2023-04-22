@@ -12,6 +12,10 @@ export class TourismService {
     return this.http.get('assets/csv/' + id + '.csv', {responseType: 'text'});
   }
 
+  getDataPerRegion(id: number) : any {
+    return this.http.get('assets/csv/region_' + id + '.csv', {responseType: 'text'});
+  }
+
   private parseCSVData(csvData: string) {
     const lines = csvData.split('\n');
     const result = [];

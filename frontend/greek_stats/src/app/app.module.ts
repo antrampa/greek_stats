@@ -30,6 +30,8 @@ import { PieChartComponent } from './chart-tourism/pie-chart/pie-chart.component
 import { AboutUsComponent } from './about-us/about-us.component';
 import { HomeComponent } from './home/home.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { TourismPerRegionComponent } from './tourism-per-region/tourism-per-region.component';
+import { SalesPerCountryComponent } from './sales-per-country/sales-per-country.component';
 
 
 @NgModule({
@@ -43,6 +45,8 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
     AboutUsComponent,
     HomeComponent,
     PageNotFoundComponent,
+    TourismPerRegionComponent,
+    SalesPerCountryComponent,
     // MainMenuComponent,
     // SideBarComponent,
     // ChartComponent
