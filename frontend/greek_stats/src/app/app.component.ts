@@ -31,7 +31,7 @@ export class AppComponent implements OnInit {
         label: 'Τουρισμός',
         icon: 'pi pi-globe',
         items: [
-          { label: 'Δαπάνη ανά ταξίδι μη κατοίκων στην Ελλάδα κατά χώρα προέλευσης (Τριμηνιαία)', icon: 'pi pi-map', routerLink: ['/tourism', 1] },
+          { label: 'Δαπάνη ανά ταξίδι μη κατοίκων στην Ελλάδα κατά χώρα προέλευσης (Ετήσια)', icon: 'pi pi-map', routerLink: ['/tourism', 1] },
           { label: 'Δαπάνη ανά ταξίδι κατοίκων στο εξωτερικό κατά χώρα προορισμού (Ετήσια)', icon: 'pi pi-map', routerLink: ['/tourism', 2] },
           { label: 'Δαπάνη ανά διανυκτέρευση μη κατοίκων στην Ελλάδα κατά χώρα προέλευσης (Ετήσια)', icon: 'pi pi-map', routerLink: ['/tourism', 3] },
           { label: 'Δαπάνη ανά διανυκτέρευση κατοίκων στο εξωτερικό κατά χώρα προορισμού (Ετήσια)', icon: 'pi pi-map', routerLink: ['/tourism', 4] },
@@ -39,15 +39,15 @@ export class AppComponent implements OnInit {
           { label: 'Μέση διάρκεια παραμονής ανά ταξίδι μη κατοίκων στην Ελλάδα κατά χώρα προέλευσης (Ετήσια)', icon: 'pi pi-map', routerLink: ['/tourism', 6] },
 
         ]
+      }, 
+      {
+        label: 'Τουρισμός ανά Περιοχή',
+        icon: 'pi pi-globe',
+        items: [
+          { label: 'Ταξιδιωτικά στοιχεία ανά περιφέρεια για τις κυριότερες χώρες προέλευσης ταξιδιωτών', icon: 'pi pi-map', routerLink: ['/region', 1] },
+        ]
       }
     ];
-    this.cities = [
-      { name: 'New York', code: 'NY' },
-      { name: 'Rome', code: 'RM' },
-      { name: 'London', code: 'LDN' },
-      { name: 'Istanbul', code: 'IST' },
-      { name: 'Paris', code: 'PRS' }
-  ];
   }
 
 }

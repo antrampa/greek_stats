@@ -66,23 +66,23 @@ export class TourismComponent implements OnInit {
       const lines = csvData.split('\n');
       const header = lines[0].split(',');
       let totalPerCol: number[] = [];
-      for(let i = 2; i < header.length; i++){
+      for(let i = 1; i < header.length; i++){
         this.chartDataLabel.push(header[i].replace('_', ' '));
       }
       
       for (let i = 1; i < lines.length; i++) {
         const currentLine = lines[i].split(',');
         let k = 0;
-        for (let j = 2; j < header.length; j++) {
+        for (let j = 1; j < header.length; j++) {
           if(!isNaN(Number(currentLine[j]))) {
-            totalPerCol[k] = !isNaN(totalPerCol[k]) ? Number(totalPerCol[k]) : 0 + Number(currentLine[j]);
-            //console.log("currentLine[" + j + "] ",currentLine[j]  );
+            //totalPerCol[k] = !isNaN(totalPerCol[k]) ? Number(totalPerCol[k]) : 0 + Number(currentLine[j]);
+            totalPerCol[k] = Number((!isNaN(totalPerCol[k]) ? Number(totalPerCol[k]) : 0) + Number(currentLine[j]));
+            //console.log("totalPerCol[" + k + "] ", Number(totalPerCol[k]), Number(currentLine[j]), Number((!isNaN(totalPerCol[k]) ? Number(totalPerCol[k]) : 0) + Number(currentLine[j])) );
             //console.log("totalPerCol[" + k + "] ",totalPerCol[k]  );
-            k++;
-          } 
-          else {
+          } else {
             totalPerCol[k] = !isNaN(totalPerCol[k]) ? Number(totalPerCol[k]) : 0 + 0;
           }
+          k++;
         }
       }
 
@@ -110,26 +110,6 @@ export class TourismComponent implements OnInit {
           return "";
           break;
       }
-      /**
-       * <li><a [routerLink]="['/tourism', 1]" routerLinkActive="active" ariaCurrentWhenActive="page">
-            
-        </a></li>
-        <li><a [routerLink]="['/tourism', 2]" routerLinkActive="active" ariaCurrentWhenActive="page">
-            
-        </a></li>
-        <li><a [routerLink]="['/tourism', 3]" routerLinkActive="active" ariaCurrentWhenActive="page">
-            
-        </a></li>
-        <li><a [routerLink]="['/tourism', 4]" routerLinkActive="active" ariaCurrentWhenActive="page">
-            
-        </a></li>
-        <li><a [routerLink]="['/tourism', 5]" routerLinkActive="active" ariaCurrentWhenActive="page">
-            
-        </a></li>
-        <li><a [routerLink]="['/tourism', 6]" routerLinkActive="active" ariaCurrentWhenActive="page">
-            
-        </a></li>
-       */
       return "";
     }
 }
