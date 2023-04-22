@@ -47,7 +47,7 @@ export class TourismComponent implements OnInit {
       const header = lines[0].split(',');
       
       for(let i = 0; i < header.length; i++){
-        this.cols.push({ field: header[i], header: header[i].replace('_', ' ') });
+        this.cols.push({ field: header[i], header: header[i].replaceAll('_', ' ') });
       }
       //console.log(this.cols);
       for (let i = 1; i < lines.length; i++) {
@@ -67,7 +67,7 @@ export class TourismComponent implements OnInit {
       const header = lines[0].split(',');
       let totalPerCol: number[] = [];
       for(let i = 1; i < header.length; i++){
-        this.chartDataLabel.push(header[i].replace('_', ' '));
+        this.chartDataLabel.push(header[i].replaceAll('_', ' '));
       }
       
       for (let i = 1; i < lines.length; i++) {
@@ -75,10 +75,8 @@ export class TourismComponent implements OnInit {
         let k = 0;
         for (let j = 1; j < header.length; j++) {
           if(!isNaN(Number(currentLine[j]))) {
-            //totalPerCol[k] = !isNaN(totalPerCol[k]) ? Number(totalPerCol[k]) : 0 + Number(currentLine[j]);
             totalPerCol[k] = Number((!isNaN(totalPerCol[k]) ? Number(totalPerCol[k]) : 0) + Number(currentLine[j]));
             //console.log("totalPerCol[" + k + "] ", Number(totalPerCol[k]), Number(currentLine[j]), Number((!isNaN(totalPerCol[k]) ? Number(totalPerCol[k]) : 0) + Number(currentLine[j])) );
-            //console.log("totalPerCol[" + k + "] ",totalPerCol[k]  );
           } else {
             totalPerCol[k] = !isNaN(totalPerCol[k]) ? Number(totalPerCol[k]) : 0 + 0;
           }
