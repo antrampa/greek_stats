@@ -48,6 +48,20 @@ export class TourismPerRegionComponent implements OnInit {
             console.log(error);
           }
         );
+
+        this.tourismService.getJsonData(11).subscribe(
+          data => {
+            /* parse data */
+            console.log(data);
+            // this.csvData = data;
+            // this.parseCSVData(data);
+            // this.parseRegions(data);
+            // this.parseCSVDataForCharts(data);
+          },
+          error => {
+            console.log(error);
+          }
+        );
     }
 
     private parseCSVData(csvData: string) {

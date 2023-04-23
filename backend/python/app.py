@@ -35,19 +35,19 @@ def read_csv_to_json(id):
     return json_data
 
 
-@app.route('/about')
+@app.route('/')
 def hello_world():
     return '<h1>Greek Stats API v1</h1>'
 
 
-@app.route('/data')
+@app.route('/api/data')
 def get_data():
     id = request.args.get('id')
     json_data = read_csv_to_json(id)
     return json_data
 
 
-@app.route('/')
+@app.route('/api/')
 def get_Links():
 
     cnx = mysql.connector.connect(
@@ -58,7 +58,7 @@ def get_Links():
     )
 
     cursor = cnx.cursor()
-    query = "SELECT id,descr,url,url_xlsx,csv_file_name,text FROM source"
+    query = "SELECT id,descr,url,url_xlsx,csv_file_name,text FROM source ORDER BY sort"
     cursor.execute(query)
     rows = cursor.fetchall()
     data = []
@@ -68,7 +68,7 @@ def get_Links():
         url = row[2]
         url_xlsx = row[3]
         csv_file_name = row[4]
-        link = "http://{}/data?id={}".format(request.host, id)
+        link = "http://{}/api/data?id={}".format(request.host, id)
         text = row[5]
         data.append({"id": id, "descr": descr,
                     "url": url, "url_xlsx": url_xlsx,
