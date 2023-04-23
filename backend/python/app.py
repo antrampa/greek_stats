@@ -35,6 +35,17 @@ def read_csv_to_json(id):
     return json_data
 
 
+def read_csv_to_json_by_name(csv_filename):
+
+    data = []
+    with open(csv_filename, 'r') as csvfile:
+        reader = csv.DictReader(csvfile)
+        for row in reader:
+            data.append(row)
+    json_data = json.dumps(data)
+    return json_data
+
+
 @app.route('/')
 def hello_world():
     return '<h1>Greek Stats API v1</h1>'
@@ -77,6 +88,13 @@ def get_Links():
     json_data = json.dumps(data)
     cursor.close()
     cnx.close()
+    return json_data
+
+
+@app.route('/api/salary')
+def get_salary_per_cpuntry():
+    id = request.args.get('id')
+    json_data = read_csv_to_json_by_name("csv/salary_per_country.csv")
     return json_data
 
 
