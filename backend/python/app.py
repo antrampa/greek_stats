@@ -58,7 +58,7 @@ def get_Links():
     )
 
     cursor = cnx.cursor()
-    query = "SELECT id,descr,url,url_xlsx,csv_file_name FROM source"
+    query = "SELECT id,descr,url,url_xlsx,csv_file_name,text FROM source"
     cursor.execute(query)
     rows = cursor.fetchall()
     data = []
@@ -68,10 +68,12 @@ def get_Links():
         url = row[2]
         url_xlsx = row[3]
         csv_file_name = row[4]
-        link = "http://127.0.0.1:5000/data?id={}".format(id)
+        link = "http://{}/data?id={}".format(request.host, id)
+        text = row[5]
         data.append({"id": id, "descr": descr,
                     "url": url, "url_xlsx": url_xlsx,
-                     "csv_file_name": csv_file_name, "link": link})
+                     "csv_file_name": csv_file_name,
+                     "link": link, "text": text})
     json_data = json.dumps(data)
     cursor.close()
     cnx.close()
