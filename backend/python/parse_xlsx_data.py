@@ -2,6 +2,11 @@ import mysql.connector
 import requests
 import pandas as pd
 
+P_HOST = "localhost"
+P_USERNAME = "root"
+P_PWD = "Orxe568@#"
+P_DB = "greek_stats"
+
 
 def get_xlsx_to_csv(url, csv_file):
 
@@ -28,10 +33,10 @@ def get_xlsx_to_csv(url, csv_file):
 
 
 cnx = mysql.connector.connect(
-    host="localhost",
-    user="root",
-    password="Orxe568@#",
-    database="greek_stats"
+    host=P_HOST,
+    user=P_USERNAME,
+    password=P_PWD,
+    database=P_DB
 )
 
 cursor = cnx.cursor()
