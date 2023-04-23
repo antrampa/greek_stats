@@ -8,8 +8,8 @@ app = Flask(__name__)
 
 
 P_HOST = "localhost"
-P_USERNAME = "root"
-P_PWD = "Orxe568@#"
+P_USERNAME = "username"
+P_PWD = "password"
 P_DB = "greek_stats"
 
 
