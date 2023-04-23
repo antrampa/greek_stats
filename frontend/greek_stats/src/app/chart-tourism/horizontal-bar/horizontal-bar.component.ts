@@ -30,17 +30,17 @@ export class HorizontalBarComponent implements OnInit {
             labels: this.dataLabel, //this.labels,
             datasets: [
                 {
-                    label: 'My First dataset',
+                    label: this.label, // 'My First dataset',
                     backgroundColor: documentStyle.getPropertyValue('--blue-500'),
                     borderColor: documentStyle.getPropertyValue('--blue-500'),
                     data: this.data // [65, 59, 80, 81, 56, 55, 40]
-                },
-                {
-                    label: 'My Second dataset',
-                    backgroundColor: documentStyle.getPropertyValue('--pink-500'),
-                    borderColor: documentStyle.getPropertyValue('--pink-500'),
-                    data: this.data2 //[28, 48, 40, 19, 86, 27, 90]
                 }
+                //, {
+                //     label: 'My Second dataset',
+                //     backgroundColor: documentStyle.getPropertyValue('--pink-500'),
+                //     borderColor: documentStyle.getPropertyValue('--pink-500'),
+                //     data: this.data2 //[28, 48, 40, 19, 86, 27, 90]
+                // }
             ]
         };
 

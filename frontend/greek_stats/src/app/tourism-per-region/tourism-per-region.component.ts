@@ -42,7 +42,7 @@ export class TourismPerRegionComponent implements OnInit {
             this.csvData = data;
             this.parseCSVData(data);
             this.parseRegions(data);
-            //this.parseCSVDataForCharts(data);
+            this.parseCSVDataForCharts(data);
           },
           error => {
             console.log(error);
@@ -101,7 +101,7 @@ export class TourismPerRegionComponent implements OnInit {
       console.log("selectedRegion",this.selectedRegion);
       console.log("this.csvData",this.csvData);
       this.parseCSVData(this.csvData);
-      //this.parseCSVDataForCharts(this.csvData);
+      this.parseCSVDataForCharts(this.csvData);
   }
 
     private parseCSVDataForCharts(csvData: string) {
@@ -114,6 +114,13 @@ export class TourismPerRegionComponent implements OnInit {
       
       for (let i = 1; i < lines.length; i++) {
         const currentLine = lines[i].split(',');
+        if(this.selectedRegion != null && this.selectedRegion != undefined) {
+          let regValue = currentLine[this.REGION_COLUMN_NUMBER];
+          if(regValue  !==  this.selectedRegion){
+            //console.log("continue", regValue ,this.selectedRegion);
+            continue; //Filtering
+          }
+        }
         let k = 0;
         for (let j = 1; j < header.length; j++) {
           if(!isNaN(Number(currentLine[j]))) {
