@@ -49,9 +49,6 @@ import { HorizontalBarComponent } from './chart-tourism/horizontal-bar/horizonta
     TourismPerRegionComponent,
     SalesPerCountryComponent,
     HorizontalBarComponent,
-    // MainMenuComponent,
-    // SideBarComponent,
-    // ChartComponent
   ],
   imports: [
     BrowserModule,

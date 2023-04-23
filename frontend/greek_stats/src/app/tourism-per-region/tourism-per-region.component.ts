@@ -57,9 +57,6 @@ export class TourismPerRegionComponent implements OnInit {
             console.log(data);
             this.jsonData = data;
             this.parseRegionsJson(data);
-            // this.parseCSVData(data);
-            // this.parseRegions(data);
-            // this.parseCSVDataForCharts(data);
           },
           error => {
             console.log(error);
@@ -71,8 +68,6 @@ export class TourismPerRegionComponent implements OnInit {
             /* parse data */
             console.log("salary",data);
             this.jsonSalaryPerCountries = data;
-            // this.parseCSVData(data);
-            // this.parseCSVDataForCharts(data);
           },
           error => {
             console.log(error);
