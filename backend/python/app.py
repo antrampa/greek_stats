@@ -35,7 +35,7 @@ def read_csv_to_json(id):
     return json_data
 
 
-@app.route('/')
+@app.route('/about')
 def hello_world():
     return '<h1>Greek Stats API v1</h1>'
 
@@ -47,7 +47,7 @@ def get_data():
     return json_data
 
 
-@app.route('/links')
+@app.route('/')
 def get_Links():
 
     cnx = mysql.connector.connect(
@@ -67,9 +67,11 @@ def get_Links():
         descr = row[1]
         url = row[2]
         url_xlsx = row[3]
-        link = "data?id=id"
+        csv_file_name = row[4]
+        link = "http://127.0.0.1:5000/data?id={}".format(id)
         data.append({"id": id, "descr": descr,
-                    "url": url, "url_xlsx": url_xlsx, "link": link})
+                    "url": url, "url_xlsx": url_xlsx,
+                     "csv_file_name": csv_file_name, "link": link})
     json_data = json.dumps(data)
     cursor.close()
     cnx.close()
