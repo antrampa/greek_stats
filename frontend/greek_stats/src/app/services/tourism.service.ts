@@ -31,6 +31,16 @@ export class TourismService {
     //     });
   }
 
+  getJsonSalaryPerCountry() : any {
+    //return this.http.get<any>('/api/data?id=' + id + '')
+    return this.http.get(this.baseUrl + '/salary');
+    // .map(res => <any> res.json())
+    //     .catch(error => {
+    //         console.log(error);
+    //         return Observable.throw(error);
+    //     });
+  }
+
   private parseCSVData(csvData: string) {
     const lines = csvData.split('\n');
     const result = [];

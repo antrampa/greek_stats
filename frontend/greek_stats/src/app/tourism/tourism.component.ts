@@ -54,7 +54,7 @@ export class TourismComponent implements OnInit {
         const obj = {};
         const currentLine = lines[i].split(',');
         for (let j = 0; j < this.cols.length; j++) {
-          obj[this.cols[j].field] = currentLine[j];
+          obj[this.cols[j].field] = currentLine[j]?.replaceAll(":","");
           //console.log(this.cols[j].field,currentLine[j]);
           this.rowData.push(obj);
         }

@@ -20,6 +20,8 @@ export class TourismPerRegionComponent implements OnInit {
 
   chartDataLabel: any[] = [];
   chartData: number[] = [];
+  jsonData: any = {};
+  jsonSalaryPerCountries: any = {};
 
   title : string = "";
   label : string = "";
@@ -41,7 +43,7 @@ export class TourismPerRegionComponent implements OnInit {
             // console.log(data);
             this.csvData = data;
             this.parseCSVData(data);
-            this.parseRegions(data);
+            //this.parseRegions(data);
             this.parseCSVDataForCharts(data);
           },
           error => {
@@ -53,7 +55,8 @@ export class TourismPerRegionComponent implements OnInit {
           data => {
             /* parse data */
             console.log(data);
-            // this.csvData = data;
+            this.jsonData = data;
+            this.parseRegionsJson(data);
             // this.parseCSVData(data);
             // this.parseRegions(data);
             // this.parseCSVDataForCharts(data);
@@ -62,6 +65,20 @@ export class TourismPerRegionComponent implements OnInit {
             console.log(error);
           }
         );
+        
+        this.tourismService.getJsonSalaryPerCountry().subscribe(
+          data => {
+            /* parse data */
+            console.log("salary",data);
+            this.jsonSalaryPerCountries = data;
+            // this.parseCSVData(data);
+            // this.parseCSVDataForCharts(data);
+          },
+          error => {
+            console.log(error);
+          }
+        );
+        
     }
 
     private parseCSVData(csvData: string) {
@@ -106,6 +123,20 @@ export class TourismPerRegionComponent implements OnInit {
         }
           
       }
+      //console.log("this.regions", this.regions);
+    }
+
+    private parseRegionsJson(jsonData: string) {
+      const lines = jsonData;
+      this.regions = [];
+      for (var val of jsonData) {
+        console.log("region ",val); // prints values: 10, 20, 30, 40
+        let reg = val['Περιφέρεια'];
+        if(!this.regions.find(f => f == reg)){
+          this.regions.push(reg);
+        }
+      }
+      
       //console.log("this.regions", this.regions);
     }
 
