@@ -2,10 +2,11 @@ import mysql.connector
 import requests
 import pandas as pd
 
-P_HOST = "localhost"
+P_HOST = "username.mysql.pythonanywhere-services.com"
 P_USERNAME = "username"
-P_PWD = "password"
-P_DB = "greek_stats"
+P_PWD = "pwd"
+P_DB = "db_name"
+
 
 
 def get_xlsx_to_csv(url, csv_file):
@@ -13,7 +14,7 @@ def get_xlsx_to_csv(url, csv_file):
     # replace with the URL of the XLSX file you want to download
     # url = "https://www.bankofgreece.gr/OpenDataSetFilesALL/STATISTIKI/BoG_Travel_by_region_el_2023-03-31.xlsx"
     # replace with the filename you want to save the downloaded file as
-    filename = "xlsx/tmp.xlsx"
+    filename = "/home/username/mysite/xlsx/tmp.xlsx"
 
     response = requests.get(url)
     with open(filename, "wb") as f:
@@ -26,7 +27,7 @@ def get_xlsx_to_csv(url, csv_file):
 
     # Write the DataFrame to a CSV file
     # filename_csv = "csv/BoG_Travel_by_region_el_2023-03-31.csv"
-    filename_csv = "csv/" + csv_file
+    filename_csv = "/home/username/mysite/csv/" + csv_file
     df.to_csv(filename_csv, index=False)
 
     print("File converted successfully!")
