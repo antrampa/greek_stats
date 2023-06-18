@@ -9,3 +9,6 @@ It is a demo application for Bank of Greece Datathon 2023 bog.datathon.gr
 - Backend python3 and flask
 - Frontend Angular 15 with primeNG
 - Demo Version
+
+API Demo link:
+http://antzal.pythonanywhere.com/api/
