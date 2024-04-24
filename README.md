@@ -11,4 +11,4 @@ It is a demo application for Bank of Greece Datathon 2023 bog.datathon.gr
 - Demo Version
 
 API Demo link:
-http://antzal.pythonanywhere.com/api/
+[http://antzal.pythonanywhere.com/api/](https://orthlex.zalonis-softwares.eu/demoapps/greekstats/dist/greek_stats)
